@@ -1,5 +1,7 @@
 import requests
-from config import BASE_URL, WEATHER_API_KEY
+from config import WEATHER_API_KEY
+
+BASE_URL = f'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline'
 
 def get_weather_forecast(location):
     url = f'{BASE_URL}/{location}?unitGroup=metric&key={WEATHER_API_KEY}'
