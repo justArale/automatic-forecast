@@ -15,8 +15,8 @@ def main():
     forecast = get_weather_forecast(location)
     
     # Save/Display data in 3 different ways
-    save_forecast_as_html(forecast) # Save forecast in an HTML-file
-    print(forecast) # Print forecast in the console
+    save_forecast_as_html(forecast, location) # Save forecast in an HTML-file
+    print(f'14-Tage Wettervorhersage für {location} \n {forecast}') # Print forecast in the console
     send_forecast_email(forecast, location, mail_to) # Send forecast as an e-mail
 
 if __name__ == "__main__":
