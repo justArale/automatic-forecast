@@ -6,13 +6,16 @@ def save_forecast_as_html(forecast, location, temperatur_chart):
     # Determine the directory where the executable is located
     if getattr(sys, 'frozen', False):
         # If running in a frozen environment (e.g., PyInstaller)
+        html_file_path = 'forecast.html'
+        # Directory where the .exe is located
         exe_dir = os.path.dirname(sys.executable)
     else:
         # If running in a normal Python environment
+        html_file_path = 'index.html'
         exe_dir = os.path.dirname(os.path.abspath(__file__))
 
     # Define the path for the HTML file in the same directory as the executable
-    html_file_path = os.path.join(exe_dir, 'forecast.html')
+    html_file_path = os.path.join(exe_dir, html_file_path)
 
     # Write the HTML content to the file
     with open(html_file_path, 'w') as file:
