@@ -18,7 +18,7 @@ def main():
    
     # Start the function to fetch the weather forecast for the specified location
     forecast = get_weather_forecast(location)
-    temperatur_chart = create_temperatur_chart(forecast)
+    temperatur_chart = create_temperatur_chart(forecast, location)
     
     # Save/Display data in 3 different ways
     save_forecast_as_html(forecast, location, temperatur_chart) # Save forecast in an HTML-file
