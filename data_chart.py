@@ -20,7 +20,7 @@ def create_temperatur_chart(forecast):
             max_temps.append(max_temp)
     
     # Start chart
-    plt.figure(figsize=(8, 10)) # Size of the chart: width=10 zoll and height=6 zoll
+    plt.figure(figsize=(8, 12)) # Size of the chart: width=10 zoll and height=6 zoll
     plt.plot(days, min_temps, label='Min Temperature', color='blue', marker='o')
     plt.plot(days, max_temps, label='Max Temperature', color='red', marker='o')
     
