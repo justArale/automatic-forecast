@@ -1,9 +1,11 @@
 # Helper function to save the weather data in forecast.html
 def save_forecast_as_html(forecast, location, temperatur_chart):
-    with open('forecast.html', 'w') as file:
+    with open('index.html', 'w') as file:
         file.write(f'''
-        <html>
+        <html lang="en">
         <head>
+                   <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>14-Day Weather Forecast for {location}</title>
         </head>
         <body>
