@@ -58,6 +58,8 @@ This Python application fetches a 14-day weather forecast for a specified locati
    - **Location:** Enter the location for which you want to fetch the weather forecast. Press Enter to use Berlin as the default location.
    - **Email:** Enter the recipient's email address where you want to send the weather forecast.
 
+Note: You can also built and run as .exe
+
 ## Code Structure
 
 - `main.py`: The main script to run the application.
