@@ -11,6 +11,8 @@ def main():
 
     # Enter the recipient's email address
     mail_to= input ("Enter your Email: ")
+   
+
 
     # Start the function to fetch the weather forecast for the specified location
     forecast = get_weather_forecast(location)
@@ -19,7 +21,9 @@ def main():
     # Save/Display data in 3 different ways
     save_forecast_as_html(forecast, location, temperatur_chart) # Save forecast in an HTML-file
     print(f'14-Tage Wettervorhersage für {location} \n {forecast}') # Print forecast in the console
-    send_forecast_email(forecast, location, mail_to, temperatur_chart) # Send forecast as an e-mail
+
+    if mail_to and '@' in mail_to:
+        send_forecast_email(forecast, location, mail_to, temperatur_chart) # Send forecast as an e-mail
 
 if __name__ == "__main__":
     main()
