@@ -38,9 +38,9 @@ This Python application fetches a 14-day weather forecast for a specified locati
    Create a `config.py` file in the project directory with the following content:
 
    ```env
-   WEATHER_API_KEY=your_api_key_here
-   EMAIL_ADDRESS=your_email@gmail.com
-   APP_PASSWORD=your_app_password
+   WEATHER_API_KEY = your_api_key_here
+   EMAIL_ADDRESS = your_email@gmail.com
+   APP_PASSWORD = your_app_password
    ```
 
    Replace `your_api_key_here` with your Visual Crossing Weather API key, and `your_email@gmail.com` and `your_app_password` with your Gmail address and app password.
@@ -57,6 +57,8 @@ This Python application fetches a 14-day weather forecast for a specified locati
 
    - **Location:** Enter the location for which you want to fetch the weather forecast. Press Enter to use Berlin as the default location.
    - **Email:** Enter the recipient's email address where you want to send the weather forecast.
+
+Note: You can also built and run as .exe
 
 ## Code Structure
 

@@ -18,7 +18,7 @@ def main():
    
     # Start the function to fetch the weather forecast for the specified location
     forecast = get_weather_forecast(location)
-    temperatur_chart = create_temperatur_chart(forecast)
+    temperatur_chart = create_temperatur_chart(forecast, location)
     
     # Save/Display data in 3 different ways
     save_forecast_as_html(forecast, location, temperatur_chart) # Save forecast in an HTML-file
@@ -28,14 +28,25 @@ def main():
         send_forecast_email(forecast, location, mail_to, temperatur_chart) # Send forecast as an e-mail
 
 if __name__ == "__main__":
-    # Path to the configuration file
-    config_file_path = 'config.py'
+# Check if running in a frozen environment
+    if getattr(sys, 'frozen', False):
+       # Get environment variables in frozen environment
+       WEATHER_API_KEY = os.environ.get('WEATHER_API_KEY', None)
+       EMAIL_FROM = os.environ.get('EMAIL_FROM', None)
+       APP_PASSWORD = os.environ.get('APP_PASSWORD', None)
 
-    # Check if config.py exists
-    if not os.path.isfile(config_file_path):
-     print(f"Error: Configuration file {config_file_path} does not exist.")
-     sys.exit(1) # If false, exit the function
+       if not WEATHER_API_KEY or not EMAIL_FROM or not APP_PASSWORD:
+           print("Error: Missing at least one environment variable")
+           sys.exit(1) # If missing some variable, exit the function
+    else: 
+        # Path to the configuration file
+        config_file_path = 'config.py'
 
-    # If config.py is true, import and call the main function 
-    import config
+        # Check if config.py exists
+        if not os.path.isfile(config_file_path):
+            print(f"Error: Configuration file {config_file_path} does not exist.")
+            sys.exit(1) # If false, exit the function
+
+        # If config.py is true, import and call the main function 
+        import config
     main()

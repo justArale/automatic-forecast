@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+import sys
 
-def create_temperatur_chart(forecast):
+def create_temperatur_chart(forecast, location):
     # Get data from forecast
     days = []
     min_temps = []
@@ -46,14 +48,14 @@ def create_temperatur_chart(forecast):
     
     # Start chart
     plt.figure(figsize=(12, 8))  # Size of the chart: width=12 inches and height=8 inches
-    plt.plot(x, min_temps, label='Min Temperature', color='blue', marker='o')
-    plt.plot(x, max_temps, label='Max Temperature', color='red', marker='o')
+    plt.plot(x, min_temps, label='Min Temperatur', color='blue', marker='o')
+    plt.plot(x, max_temps, label='Max Temperatur', color='red', marker='o')
     
     plt.fill_between(x, min_temps, max_temps, color='gray', alpha=0.2)
     
-    plt.title('14-Day Temperature Forecast')
-    plt.xlabel('Date')
-    plt.ylabel('Temperature (°C)')
+    plt.title(f'14-Day Temperature Vorhersage für {location}')
+    plt.xlabel('Datum')
+    plt.ylabel('Temperatur (°C)')
     # x: Convert every day, days: Display the date instead of the day-indexnumber, rotation: Set the date vertical
     plt.xticks(x, days, rotation=90)  
     plt.legend()
@@ -61,7 +63,17 @@ def create_temperatur_chart(forecast):
     # Save chart as image
     chart_filename = 'temperature_chart.png'
     plt.tight_layout()  # Adjust layout to avoid clipping
-    plt.savefig(chart_filename)
+     # Determine the directory where the executable is located
+    if getattr(sys, 'frozen', False):
+        # If running in a frozen environment (e.g., PyInstaller)
+        # Directory where the .exe is located
+        exe_dir = os.path.dirname(sys.executable)
+        chart_path = os.path.join(exe_dir, chart_filename)
+    else:
+        # If running in a normal Python environment
+        chart_path = chart_filename
+    plt.savefig(chart_path)
+
     plt.close()  # Close chart
     
     return chart_filename
