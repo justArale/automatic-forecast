@@ -13,14 +13,20 @@ def get_weather_forecast(location):
     for day in data['days']:
         # Convert date into european format
         date = dt.datetime.strptime(day['datetime'],"%Y-%m-%d").strftime("%d.%m.%Y")
-        forecast += (f"Datum: {date}, Min-Temp: {day['tempmin']}°C, Max-Temp: {day['tempmax']}°C, "
-                     f"Regenwahrscheinlichkeit: {day['precip']}%, Windgeschwindigkeit: {day['windspeed']} km/h\n")
+        # Extract data
+        min_temp = day['tempmin']
+        max_temp = day['tempmax']
+        precip = day['precip']
+        wind_speed = day['windspeed']
+        forecast += (f"Datum: {date} \n"
+                     f"Min-Temp: {min_temp}°C, Max-Temp: {max_temp}°C \n"
+                     f"Regenwahrscheinlichkeit: {precip}%, Windgeschwindigkeit: {wind_speed} km/h\n\n")
     
     return forecast
 
 
-#just nessessary to test the fetch function
+#just nessessary if test only the fetch function
 if __name__ == "__main__":
-    location = input("Enter your location: ")
+    location = 'Berlin'
     forecast = get_weather_forecast(location)
     print(forecast)
