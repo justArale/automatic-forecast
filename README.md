@@ -38,9 +38,9 @@ This Python application fetches a 14-day weather forecast for a specified locati
    Create a `config.py` file in the project directory with the following content:
 
    ```env
-   WEATHER_API_KEY=your_api_key_here
-   EMAIL_ADDRESS=your_email@gmail.com
-   APP_PASSWORD=your_app_password
+   WEATHER_API_KEY = your_api_key_here
+   EMAIL_ADDRESS = your_email@gmail.com
+   APP_PASSWORD = your_app_password
    ```
 
    Replace `your_api_key_here` with your Visual Crossing Weather API key, and `your_email@gmail.com` and `your_app_password` with your Gmail address and app password.
