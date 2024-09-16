@@ -14,7 +14,7 @@ def main():
         location = 'Berlin'
 
     # Enter the recipient's email address or leave empty if you dont want to send an email
-    mail_to= input ("Enter your Email: ")
+    mail_to= input ("Enter your Email (press Enter if you dont want to send an email): ")
    
     # Start the function to fetch the weather forecast for the specified location
     forecast = get_weather_forecast(location)
