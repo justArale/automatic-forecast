@@ -64,12 +64,14 @@ This Python application fetches a 14-day weather forecast for a specified locati
 - `weather_fetch.py`: Contains the function to fetch weather forecast data from the API.
 - `utils.py`: Contains utility functions, to save the forecast data as an HTML file.
 - `email_sender.py`: Contains the function to send the forecast data via email.
+- `data_chart.py` Contains functionality to generate and save a chart image displaying the minimum and maximum temperatures over a specified period.
 - `config.py`: File to store sensitive information (not included in the repository for security reasons).
 
 ## Acknowledgements
 
 - [Visual Crossing Weather API](https://www.visualcrossing.com/weather-api) for weather data.
 - [Gmail SMTP](https://support.google.com/a/answer/176600) for sending emails.
+- [App-Password](https://support.google.com/mail/answer/185833?hl=en) documentation of Gmail.
 
 ## Troubleshooting
 
