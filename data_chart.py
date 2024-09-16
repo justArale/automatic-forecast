@@ -28,7 +28,7 @@ def create_temperatur_chart(forecast):
                 max_temps.append(max_temp)
                 
                 # Debugging output
-                print(f"Processed date: {date}, Min Temp: {min_temp}, Max Temp: {max_temp}")
+                # print(f"Processed date: {date}, Min Temp: {min_temp}, Max Temp: {max_temp}")
                 
                 # Move to the next block of data
                 i += 4
