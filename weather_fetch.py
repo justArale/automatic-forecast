@@ -1,3 +1,4 @@
+import datetime as dt
 import requests
 from config import WEATHER_API_KEY
 
@@ -10,7 +11,9 @@ def get_weather_forecast(location):
 
     forecast = ""
     for day in data['days']:
-        forecast += (f"Datum: {day['datetime']}, Min-Temp: {day['tempmin']}°C, Max-Temp: {day['tempmax']}°C, "
+        # Convert date into european format
+        date = dt.datetime.strptime(day['datetime'],"%Y-%m-%d").strftime("%d.%m.%Y")
+        forecast += (f"Datum: {date}, Min-Temp: {day['tempmin']}°C, Max-Temp: {day['tempmax']}°C, "
                      f"Regenwahrscheinlichkeit: {day['precip']}%, Windgeschwindigkeit: {day['windspeed']} km/h\n")
     
     return forecast
