@@ -6,7 +6,7 @@ def save_forecast_as_html(forecast, location, temperatur_chart):
         <head>
                    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>14-Day Weather Forecast for {location}</title>
+            <title>14-Day Weather Forecast</title>
         </head>
         <body>
             <h1>14-Day Weather Forecast for {location}</h1>
