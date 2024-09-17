@@ -53,7 +53,7 @@ def create_temperatur_chart(forecast, location):
     
     plt.fill_between(x, min_temps, max_temps, color='gray', alpha=0.2)
     
-    plt.title(f'14-Day Temperature Vorhersage für {location}')
+    plt.title(f'Übersicht der Temperaturen in {location} für die nächsten 14 Tage')
     plt.xlabel('Datum')
     plt.ylabel('Temperatur (°C)')
     # x: Convert every day, days: Display the date instead of the day-indexnumber, rotation: Set the date vertical
