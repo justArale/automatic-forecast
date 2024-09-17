@@ -23,16 +23,15 @@ def main():
 
     # Save/Display data in 3 different ways
     save_forecast_as_html(forecast, location, temperatur_chart)  # Save forecast in an HTML file
-    print(f'14-Tage Wettervorhersage für {location} \n {forecast}')  # Print forecast in the console
+    print(f'14 Tage Wettervorhersage für {location} \n {forecast}')  # Print forecast in the console
 
     if mail_to and '@' in mail_to:
         send_forecast_email(forecast, location, mail_to, temperatur_chart)  # Send forecast as an e-mail
 
 
 def load_env_variables():
-    """
-    Load environment variables either from .env or directly from environment variables.
-    """
+    # Load environment variables either from .env or directly from environment variables.
+   
     # Path where the .env file should be
     exe_dir = os.path.dirname(sys.executable) if getattr(sys, 'frozen', False) else os.getcwd()
     env_file_path = os.path.join(exe_dir, '.env')
@@ -50,9 +49,7 @@ def load_env_variables():
 
 
 def prompt_and_save_env_variables():
-    """
-    Prompt user for missing environment variables and save them in a .env file.
-    """
+    # Prompt user for missing environment variables and save them in a .env file.
     exe_dir = os.path.dirname(sys.executable) if getattr(sys, 'frozen', False) else os.getcwd()
     env_file_path = os.path.join(exe_dir, '.env')
 
